@@ -1,4 +1,4 @@
-var crypto = require('crypto');
+var euler = require('./euler.js');
 
 (function() {
     var sum = 2;
@@ -16,11 +16,5 @@ var crypto = require('crypto');
         newFib = fib1 + fib2;
     }
 
-    logAnswer(sum);
+    euler.printAnswer(sum);
 })();
-
-function logAnswer(answer) {
-    console.log('Answer: ' + answer);
-    var hash = crypto.createHash('md5').update(answer.toString()).digest('hex');
-    console.log('Hash:   ' + hash);
-}
