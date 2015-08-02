@@ -10,30 +10,9 @@ var euler = require('./euler.js');
             numberToFactor /= candidateFactor;
             if (numberToFactor === 1) break;
         } else {
-            candidateFactor = nextPrime(candidateFactor);
+            candidateFactor = euler.nextPrime(candidateFactor);
         }
     }
 
     euler.printAnswer(candidateFactor);
 })();
-
-function nextPrime(seed) {
-    var candidate = seed + 1;
-    
-    while(!isPrime(candidate)) {
-        candidate++;
-    }
-    
-    return candidate;
-}
-
-function isPrime(value) {    
-    var limit = Math.sqrt(value)
-    
-    for (var i=2; i <= limit; i++) {
-        if (value % i === 0) return false;
-    }
-    
-    return true;
-}
-

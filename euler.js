@@ -8,3 +8,23 @@ exports.printAnswer = function(answer) {
     console.log('Answer: ' + answer);
     console.log('Hash:   ' + hash);
 }
+
+exports.isPrime = function(value) {    
+    var limit = Math.sqrt(value)
+    
+    for (var i=2; i <= limit; i++) {
+        if (value % i === 0) return false;
+    }
+    
+    return true;
+}
+
+exports.nextPrime = function(seed) {
+    var candidate = seed + 1;
+    
+    while(!exports.isPrime(candidate)) {
+        candidate++;
+    }
+    
+    return candidate;
+}
