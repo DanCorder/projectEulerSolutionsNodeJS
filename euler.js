@@ -64,3 +64,20 @@ exports.getCollatzSequence = function(value) {
         }
     }
 }
+
+exports.combinations = function(n, r) {
+    var numerator = exports.factorial(n);
+    var denomiator = exports.factorial(r) * exports.factorial(n - r);
+    
+    return numerator / denomiator;
+}
+
+exports.factorial = function(value) {
+    var result = 1;
+    
+    for (var i=2; i <= value; i++) {
+        result *= i;
+    }
+    
+    return result;
+}
