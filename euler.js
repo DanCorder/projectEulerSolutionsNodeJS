@@ -45,3 +45,22 @@ exports.getNumberOfDivisors = function(value) {
     
     return divisors;
 }
+
+exports.getCollatzSequence = function(value) {
+    var sequence = [value];
+    
+    while (value !== 1) {
+        value = getNextCollatzNumber(value);
+        sequence.push(value);
+    }
+    
+    return sequence;
+    
+    function getNextCollatzNumber(value) {
+        if (value % 2 === 0) {
+            return value / 2;
+        } else {
+            return (value * 3) + 1;
+        }
+    }
+}
