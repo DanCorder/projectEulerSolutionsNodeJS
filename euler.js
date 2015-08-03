@@ -28,3 +28,20 @@ exports.nextPrime = function(seed) {
     
     return candidate;
 }
+
+exports.getNumberOfDivisors = function(value) {
+    var limit = Math.sqrt(value)
+    var divisors = 0;
+    
+    for (var i=1; i < limit; i++) {
+        if (value % i === 0) divisors++;
+    }
+    
+    divisors *= 2;
+    
+    if (Number.isInteger(limit)) {
+        divisors++;
+    }
+    
+    return divisors;
+}
