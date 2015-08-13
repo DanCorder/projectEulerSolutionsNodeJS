@@ -29,6 +29,18 @@ exports.nextPrime = function(seed) {
     return candidate;
 }
 
+exports.getProperDivisors = function(value) {
+    var divisors = [];
+    
+    for (var i = 1; i < value; i++) {
+        if (value % i === 0) {
+            divisors.push(i);
+        }
+    }
+    
+    return divisors;
+}
+
 exports.getNumberOfDivisors = function(value) {
     var limit = Math.sqrt(value)
     var divisors = 0;
